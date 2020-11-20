@@ -1985,10 +1985,8 @@ Common.extend(GUI.prototype,
       newGuiParams.closed = this.load.folders[name].closed;
       newGuiParams.load = this.load.folders[name];
     }
-    var gui = new GUI(newGuiParams);
-    this.__folders[name] = gui;
-    var li = addRow(this, gui.domElement);
-    dom.addClass(li, 'folder');
+    var gui = new dat.GUI( { autoPlace: false } );
+    gui.domElement.id = 'gui';
     return gui;
   },
   removeFolder: function removeFolder(folder) {
